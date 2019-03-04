@@ -1,0 +1,8 @@
+<h1><%= @trail.name %></h1>
+
+<p>Description: <%= @trail.description %></p>
+<p><% @trail.user_trails.each do |ut| %></p>
+
+<p>Rating: <%= ut.rating %></p>
+<p>Review: <%= ut.review %></p>
+<% end %>
