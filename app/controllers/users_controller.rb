@@ -1,14 +1,7 @@
 class UsersController < ApplicationController
     before_action :get_user, only: [:show, :edit, :update, :destroy]
 
-    def welcome
-        #if user has an account then they can log in if not then direct them to render:new
-
-        #render :new
-
-    end
-
-    def index
+    def show
 
     end
 
@@ -19,30 +12,22 @@ class UsersController < ApplicationController
     def create
         @user = User.new(user_params)
         if @user.save
-            flash[:notice] = "You signed up successfully"
-            flash[:color]= "valid"
+            log_in_user(@user)
+            redirect_to @user
         else
-            flash[:notice] = "Form is invalid"
-            flash[:color]= "invalid"
+            flash[:errors] = "You must enter all information to create account"
+            redirect_to new_user_path
         end
-        render "new"
 
     end
-
-    def show
-
-    end
-
-
-
-
+    
     private
     def get_user
         @user = User.find(params[:id])
     end
 
     def user_params
-        params.require(:user).permit(:first_name, :last_name, :email)
+        params.require(:user).permit(:first_name, :last_name, :email,:username, :password)
     end
 
 end

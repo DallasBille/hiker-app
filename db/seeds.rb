@@ -5,10 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-User.create(first_name: "andy", last_name: "reyes", email: "areyes123@gmail.com")
-User.create(first_name: "dallas", last_name: "bille", email: "dbille456@gmail.com")
-User.create(first_name: "john", last_name: "doe", email: "johndoe@gmail.com")
-User.create(first_name: "jane", last_name: "dame", email: "janedame@gmail.com")
+User.create(first_name: "andy", last_name: "reyes", email: "areyes123@gmail.com", username:"andy",password_digest: "")
+User.create(first_name: "dallas", last_name: "bille", email: "dbille456@gmail.com", username: "dallas",password_digest: "")
+User.create(first_name: "john", last_name: "doe", email: "johndoe@gmail.com", username: "john",password_digest: "")
+User.create(first_name: "jane", last_name: "dame", email: "janedame@gmail.com", username: "jane",password_digest: "")
 
 NationalPark.create(name: "YellowStone", state: "Wyoming", img_url: "https://cdn.thecrazytourist.com/wp-content/uploads/2017/10/ccimage-shutterstock_270324281.jpg")
 NationalPark.create(name: "Grand Canyon", state: "Arizona", img_url: "https://cdn.thecrazytourist.com/wp-content/uploads/2017/10/ccimage-shutterstock_167691545.jpg")

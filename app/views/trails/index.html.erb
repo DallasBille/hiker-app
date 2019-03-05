@@ -1,5 +1,5 @@
 <h1>Trails!</h1>
-
+<%= link_to "Add a Review", new_user_trail_path %>
 <% @trails.each do |trail| %>
     <ul>
         <li><%= link_to trail.name, trail_path(trail) %></li>

@@ -1,3 +1,7 @@
 <h1><%= @national_park.name %> National Park</h1>
 <h2>State: <%= @national_park.state %></h2>
-<img src="<%= @national_park.img_url %>" alt="">
+<h3>Trails: <% @national_park.trails.each do |trail| %></h3>
+            <%= link_to trail.name, trail %>
+            <% end %>
+
+<p><img src="<%= @national_park.img_url %>" alt=""></p>
