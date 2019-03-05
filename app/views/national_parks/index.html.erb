@@ -1,0 +1,7 @@
+<h1>Here are the National Parks!</h1>
+
+<% @national_parks.each do |np| %>
+    <ul>
+        <li><%= link_to np.name, np %></li>
+    </ul>
+<% end %>
