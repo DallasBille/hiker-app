@@ -1,8 +1,16 @@
-<h1><%= @trail.name %></h1>
+<h3>Information on the <%= @trail.name %></h3>
 
 <p>Description: <%= @trail.description %></p>
-<p><% @trail.user_trails.each do |ut| %></p>
+<p>Miles: <%= @trail.miles %></p>
+<p>National Park: <%= @trail.national_park.name %>, State: <%= @trail.national_park.state %>
 
-<p>Rating: <%= ut.rating %></p>
-<p>Review: <%= ut.review %></p>
+
+<% @trail.user_trails.each do |ut| %>
+    <p>Rating: <%= ut.rating %></p>
+    <p>Review: <%= ut.review %></p>
+    <p>Hiker: <%= ut.user_id %></p>
+<% end %>
+
+<% @trail.users.each do |user| %>
+    <p><%= user.full_name %></p>
 <% end %>

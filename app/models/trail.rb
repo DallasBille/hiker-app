@@ -4,6 +4,4 @@ class Trail < ApplicationRecord
     has_many :lists
     has_many :users, through: :lists
     belongs_to :national_park
-
-    
 end

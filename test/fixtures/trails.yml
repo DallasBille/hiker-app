@@ -3,11 +3,9 @@
 one:
   name: MyString
   description: MyString
-  miles: 1
   national_park_id: 1
 
 two:
   name: MyString
   description: MyString
-  miles: 1
   national_park_id: 1
