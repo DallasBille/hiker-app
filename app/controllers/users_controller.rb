@@ -8,6 +8,10 @@ class UsersController < ApplicationController
 
     end
 
+    def index
+
+    end
+
     def new
         @user = User.new
     end
@@ -22,6 +26,11 @@ class UsersController < ApplicationController
             flash[:color]= "invalid"
         end
         render "new"
+
+    end
+
+    def show
+        
     end
 
 
