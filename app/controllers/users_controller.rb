@@ -3,7 +3,7 @@ class UsersController < ApplicationController
 
 
     def show
-
+        @lists = List.all
     end
 
     def new
@@ -21,6 +21,10 @@ class UsersController < ApplicationController
         end
     end
 
+    def destroy
+
+    end
+
 
 
     private
@@ -31,5 +35,6 @@ class UsersController < ApplicationController
     def user_params
         params.require(:user).permit(:first_name, :last_name, :email, :username, :password)
     end
+
 
 end

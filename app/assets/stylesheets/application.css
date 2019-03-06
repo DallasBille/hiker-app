@@ -14,6 +14,7 @@
  *= require_self
  */
 header {
+    text-align: center;
     background-color: #fff;
     color: #202c2d;
     font-size: 65px;

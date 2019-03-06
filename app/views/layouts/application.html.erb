@@ -14,14 +14,17 @@
           <p>BackCountryTrails</p>
       </header>
       <% unless @logged_in  %><
-      <p><%= link_to "Login", new_login_path %></p>
-      <p><%= link_to "Sign Up", new_user_path %></p>
+        <p><%= link_to "Login", new_login_path %></p>
+        <p><%= link_to "Sign Up", new_user_path %></p>
       <% else %>
-      Hello, <%= @logged_in_user.username %><br>
-      <%= link_to "National Parks", national_parks_path  %>*
-      <%= link_to "All Trails", trails_path  %>*
-      <%= link_to "Review a Trail", new_user_trail_path  %>*
-      <%= link_to "Add Trail to My List"  %>
+        Hello, <%= @logged_in_user.username %><br>
+        <%= link_to "National Parks", national_parks_path  %>*
+        <%= link_to "All Trails", trails_path  %>*
+        <%= link_to "Review a Trail", new_user_trail_path  %>*
+        <%= link_to "My Profile", user_path(@logged_in_user)  %>
+        <%= form_tag "/login/#{ @logged_in_user.id }", method: :delete do %>
+            <%= submit_tag "Log out" %>
+        <% end %>
       <% end %>
     <%= yield %>
   </body>

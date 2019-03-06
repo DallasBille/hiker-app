@@ -1,17 +1,32 @@
-<h3>Information on the <%= @trail.name %></h3>
+<h3><%= @trail.name %></h3>
+<%= flash[:errors].to_s %>
 <%= link_to 'Add a Review', new_user_trail_path%>
+
+
+<% if @logged_in_user %>
+    <%= link_to "Add a Review", new_user_trail_path %>
+    <%= form_for @lists do |f| %>
+    <%= f.hidden_field :user_id, value: @logged_in_user.id %>
+    <%= f.hidden_field :trail_id, value: @trail.id %>
+    <%= f.submit "Add to List" %>
+    <% end %>
+<% end %>
+
 
 <p>Description: <%= @trail.description %></p>
 <p>Miles: <%= @trail.miles %></p>
 <p>National Park: <%= @trail.national_park.name %>, State: <%= @trail.national_park.state %>
 
 <% @trail.user_trails.each do |ut| %>
+    <hr>
     <p>Hiker: <%= ut.user.full_name %></p>
     <p>Rating: <%= ut.rating %></p>
     <p>Review: <%= ut.review %></p>
-    <% if @logged_in_user.id == ut.user_id %>
-        <%= form_for ut, method: :delete do |t|%>
-            <%= t.submit "Delete" %>
-        <% end %>
-    <%end %>
+    <% if @logged_in_user %>
+        <% if @logged_in_user.id == ut.user_id %>
+            <%= form_for ut, method: :delete do |t|%>
+                <%= t.submit "Delete" %>
+            <% end %>
+        <%end %>
+    <% end %>
 <% end %>
