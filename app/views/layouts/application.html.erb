@@ -11,7 +11,7 @@
 
   <body>
       <p>Hiker App</p>
-      <% unless @logged_in  %><
+      <% unless @logged_in  %>
       <p><%= link_to "Login", new_login_path %></p>
       <p><%= link_to "Sign Up", new_user_path %></p>
       <% else %>
@@ -19,7 +19,10 @@
       <%= link_to "National Parks", national_parks_path  %>*
       <%= link_to "All Trails", trails_path  %>*
       <%= link_to "Review a Trail", new_user_trail_path  %>*
-      <%= link_to "Add Trail to My List"  %>
+      <%= link_to "My Profile", @logged_in_user  %>
+      <%= form_tag "/login/#{@logged_in_user.id}", method: :delete do %>
+      <%= submit_tag "Logout" %>
+      <% end %>
       <% end %>
 
 

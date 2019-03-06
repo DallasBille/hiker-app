@@ -1,1 +1,10 @@
-<h2>Here is your page <%= @user.full_name %></h2>
+<h2>These are the trails you have hiked</h2>
+
+<% @user.trails.each do |trail|%>
+    <ul>
+        <li>
+            <%= link_to trail.name, trail %>
+        </li>
+    
+    </ul>
+<% end %>

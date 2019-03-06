@@ -1,6 +1,12 @@
-<h3>Information on the <%= @trail.name %></h3>
-
+<h3><%= @trail.name %></h3>
+<%= flash[:errors].to_s %>
 <%= link_to "Add a Review", new_user_trail_path %>
+<%= form_for @lists do |f| %>
+<%= f.hidden_field :user_id, value: @logged_in_user.id %>
+<%= f.hidden_field :trail_id, value: @trail.id %>
+<%= f.submit "Add to List" %>
+<% end %>
+
 
 <p>Description: <%= @trail.description %></p>
 <p>Miles: <%= @trail.miles %></p>
@@ -8,6 +14,7 @@
 
 
 <% @trail.user_trails.each do |ut| %>
+<hr>
     <p>Hiker: <%= ut.user.full_name %></p>
     <p>Rating: <%= ut.rating %></p>
     <p>Review: <%= ut.review %></p>
@@ -17,4 +24,3 @@
     <% end %>
     <%end %>
     <% end %>
-<hr>

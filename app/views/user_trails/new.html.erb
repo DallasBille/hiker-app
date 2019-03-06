@@ -1,5 +1,6 @@
 <h3>Write a review of a selected trail</h3>
-<%= flash[:errors] %>
+<p><%=flash[:errors] %></p>
+
 <%= form_for @user_trail do |f| %>
 <%= f.hidden_field :user_id, value: @logged_in_user.id %>
 

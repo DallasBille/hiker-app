@@ -3,10 +3,11 @@ class TrailsController < ApplicationController
 
     def index
         @trails = Trail.all
+
     end
 
     def show
-
+        @lists = List.new
     end
 
 
