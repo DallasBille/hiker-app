@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
     before_action :login_setup
+    
 
     def login_setup
         @logged_in = !!session[:user_id]

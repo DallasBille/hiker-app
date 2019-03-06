@@ -5,6 +5,20 @@
         <li>
             <%= link_to trail.name, trail %>
         </li>
-    
+
     </ul>
+<% end %>
+
+<h2>These are the trails you want to hike</h2>
+
+<% @user.lists.each do |list|  %>
+
+<ul>
+    <li>
+        <%= link_to list.trail.name, list.trail %>
+        <%= form_for list, method: :delete do |f|%>
+        <%= f.submit "Remove Trail From List" %>
+        <% end %>
+    </li>
+</ul>
 <% end %>

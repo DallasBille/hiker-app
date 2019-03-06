@@ -15,10 +15,15 @@ class ListsController < ApplicationController
 
     end
 
+    def destroy
+        @list = List.find(params[:id])
+        @list.destroy
+        redirect_to user_path(@logged_in_user)
+    end
+
     private
 
     def get_params
-        byebug
         params.require(:list).permit(:user_id, :trail_id)
     end
 
