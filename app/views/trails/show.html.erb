@@ -1,16 +1,17 @@
 <h3>Information on the <%= @trail.name %></h3>
+<%= link_to 'Add a Review', new_user_trail_path%>
 
 <p>Description: <%= @trail.description %></p>
 <p>Miles: <%= @trail.miles %></p>
 <p>National Park: <%= @trail.national_park.name %>, State: <%= @trail.national_park.state %>
 
-
 <% @trail.user_trails.each do |ut| %>
+    <p>Hiker: <%= ut.user.full_name %></p>
     <p>Rating: <%= ut.rating %></p>
     <p>Review: <%= ut.review %></p>
-    <p>Hiker: <%= ut.user_id %></p>
-<% end %>
-
-<% @trail.users.each do |user| %>
-    <p><%= user.full_name %></p>
+    <% if @logged_in_user.id == ut.user_id %>
+        <%= form_for ut, method: :delete do |t|%>
+            <%= t.submit "Delete" %>
+        <% end %>
+    <%end %>
 <% end %>
