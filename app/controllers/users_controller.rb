@@ -2,7 +2,7 @@ class UsersController < ApplicationController
     before_action :get_user, only: [:show, :edit, :update, :destroy]
 
     def show
-        @lists = List.all
+        @user_trail = UserTrail.all
 
     end
 
@@ -19,6 +19,7 @@ class UsersController < ApplicationController
             flash[:errors] = "You must enter all information to create account"
             redirect_to new_user_path
         end
+
 
     end
 

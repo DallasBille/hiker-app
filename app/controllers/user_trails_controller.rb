@@ -23,6 +23,16 @@ class UserTrailsController < ApplicationController
         end
     end
 
+    def edit
+        @user_trail = UserTrail.find(params[:id])
+    end
+
+    def update
+        @user_trail = UserTrail.find(params[:id])
+        @user_trail.update(ut_params)
+        redirect_to trail_path(@user_trail.trail_id)
+    end
+
     def destroy
         @user_trail = UserTrail.find(params[:id])
         @user_trail.destroy
