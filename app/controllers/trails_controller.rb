@@ -7,8 +7,9 @@ class TrailsController < ApplicationController
     end
 
     def show
-        @lists = List.new
+        @list = List.new
     end
+
 
 
 

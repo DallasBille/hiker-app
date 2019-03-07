@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_05_181501) do
+ActiveRecord::Schema.define(version: 2019_03_06_023737) do
 
   create_table "lists", force: :cascade do |t|
     t.integer "trail_id"

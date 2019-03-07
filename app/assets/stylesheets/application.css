@@ -13,3 +13,73 @@
  *= require_tree .
  *= require_self
  */
+
+ body {
+     font-family: 'Indie Flower', cursive;
+     background: radial-gradient(
+      #00000096,
+      #b7b7b796
+    );
+    /* background: url(https://thumbnails-visually.netdna-ssl.com/mountain-hiking-accesories_511ccc2aa37ec_w1500.jpg); */
+    z-index: -2px;
+    background-size: cover;
+ }
+
+
+.app-title {
+    padding: 0px;
+    margin: 0px;
+    text-decoration: none;
+    text-align: center;
+    color: #1f5f38 ;
+    font-size: 45px;
+
+}
+
+
+.container {
+    text-align: right;
+    background-attachment: fixed;
+    margin: 10px;
+
+}
+
+#header-ul li {
+  display:inline;
+  list-style-type: none;
+  text-align: right;
+}
+
+.nav-bar {
+    border: 1px solid black;
+    border-radius: 65px 10px 65px;
+    padding: 10px;
+    background: #fcfeff;
+}
+
+a {
+  width: 25%;
+  padding: .75rem 0;
+  margin: 0;
+  text-decoration: none;
+  color: #333;
+}
+a:hover {
+    text-decoration: underline;
+    color: #1f5f38;
+}
+
+.logged-in-navbar {
+    text-align: right;
+    padding: 15px;
+
+}
+
+.horizontal-line {
+    color: blue;
+}
+
+.login-wrapper {
+    text-align: center;
+    padding: 100px;
+}

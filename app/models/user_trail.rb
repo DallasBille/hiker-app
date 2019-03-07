@@ -4,5 +4,4 @@ class UserTrail < ApplicationRecord
 
     validates :review, {presence: true}
     validates :user_id, uniqueness: {scope: :trail_id, message: "You have already reviewed this trail"}
-
 end

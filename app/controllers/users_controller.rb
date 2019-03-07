@@ -1,12 +1,10 @@
 class UsersController < ApplicationController
     before_action :get_user, only: [:show, :edit, :update, :destroy]
 
-    def new
-        @user = User.new
-    end
 
     def show
-        @user_trail = UserTrail.all
+        @lists = List.all
+    end
 
     end
 
@@ -27,7 +25,8 @@ class UsersController < ApplicationController
     end
 
     def user_params
-        params.require(:user).permit(:first_name, :last_name, :email,:username, :password)
+        params.require(:user).permit(:first_name, :last_name, :email, :username, :password)
     end
+
 
 end
