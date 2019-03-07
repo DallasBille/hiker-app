@@ -5,7 +5,7 @@
 
 <% if @logged_in_user %>
     <%= link_to "Add a Review", new_user_trail_path %>
-    <%= form_for @lists do |f| %>
+    <%= form_for @list do |f| %>
     <%= f.hidden_field :user_id, value: @logged_in_user.id %>
     <%= f.hidden_field :trail_id, value: @trail.id %>
     <%= f.submit "Add to List" %>
