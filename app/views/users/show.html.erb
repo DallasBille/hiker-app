@@ -1,24 +1,19 @@
-<h2>These are the trails you have hiked</h2>
+<h1>These are the trails you have hiked</h1>
 
 <% @user.trails.each do |trail|%>
-    <ul>
-        <li>
-            <%= link_to trail.name, trail %>
-        </li>
 
-    </ul>
+            <p class="trail-name"><%= link_to trail.name, trail %></p>
+
 <% end %>
 
-<h2>These are the trails you want to hike</h2>
+<h1>These are the trails you want to hike</h1>
 
 <% @user.lists.each do |list|  %>
 
-<ul>
-    <li>
-        <%= link_to list.trail.name, list.trail %>
-        <%= form_for list, method: :delete do |f|%>
-        <%= f.submit "Remove Trail From List" %>
+
+        <p><%= link_to list.trail.name, list.trail %></p>
+        <p><%= form_for list, method: :delete do |f|%></p>
+        <p><%= f.submit "Remove Trail From List" %></p>
         <% end %>
-    </li>
-</ul>
+
 <% end %>

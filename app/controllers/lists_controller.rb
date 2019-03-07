@@ -5,11 +5,12 @@ class ListsController < ApplicationController
     end
 
     def create
-        @list = List.new (list_params)
+        @list = List.new(list_params)
         if @list.save
             redirect_to trail_path(@list.trail_id)
         else
-            flash[:errors] = @list.errors.full_messages
+            flash[:errors] = "This trail is already on your list"
+            redirect_to trail_path(@list.trail_id)
         end
     end
 

@@ -1,11 +1,8 @@
 class UsersController < ApplicationController
     before_action :get_user, only: [:show, :edit, :update, :destroy]
 
-
-    def show
-        @lists = List.all
-    end
-
+    def new
+        @user = User.new
     end
 
     def create
@@ -17,6 +14,10 @@ class UsersController < ApplicationController
             flash[:errors] = @user.errors.full_messages
             redirect_to new_user_path
         end
+    end
+
+    def show
+        @lists = List.all
     end
 
     private

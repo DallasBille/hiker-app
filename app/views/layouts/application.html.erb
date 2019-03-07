@@ -36,17 +36,18 @@
           </ul>
           </div>
           <% else %>
-          <div class="logged-in-navbar">
-            Hello, <%= @logged_in_user.username %><br>
-            <%= link_to "National Parks", national_parks_path  %>
-            <%= link_to "All Trails", trails_path  %>
-            <%= link_to "Review a Trail", new_user_trail_path  %>
-            <%= link_to "My Profile", user_path(@logged_in_user)  %>
-            <%= form_tag "/login/#{ @logged_in_user.id }", method: :delete do %>
-                <%= submit_tag "Log out" %>
-                <hr>
+            <p style="font-size: 28px;text-align: left;">Hello, <%= @logged_in_user.username %></p>
+            <div class="container">
+            <ul id="header-ul">
+                <li><%= link_to "National Parks", national_parks_path, class: 'nav-bar' %></li>
+                <li class="nav-bar"><%= link_to "All Trails", trails_path %></li>
+                <li class="nav-bar"><%= link_to "Review a Trail", new_user_trail_path %></li>
+                <li class="nav-bar"><%= link_to "My Profile", user_path(@logged_in_user) %></li>
+                <li><%= form_tag "/login/#{ @logged_in_user.id }", method: :delete do %>
+                    <%= submit_tag "Log out", class: 'nav-bar'%></li>
             <% end %>
           <% end %>
+          </ul>
           </div>
       </header>
     <%= yield %>

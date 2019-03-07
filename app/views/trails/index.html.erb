@@ -1,8 +1,8 @@
 <h1>Trails!</h1>
-<%= link_to "Add a Review", new_user_trail_path %>
+<%= link_to "Add a Review", new_user_trail_path, style: "font-size: 24px; text-padding" %>
 
 <% @trails.each do |trail| %>
-    <ul>
-        <li><%= link_to trail.name, trail_path(trail) %></li>
-    </ul>
+
+    <p class="trail-name"><%= link_to trail.name, trail_path(trail) %></p>
+
 <% end %>

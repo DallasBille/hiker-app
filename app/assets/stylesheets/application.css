@@ -15,7 +15,7 @@
  */
 
  body {
-     font-family: 'Indie Flower', cursive;
+     font-family: 'Garamond';
      background: radial-gradient(
       #00000096,
       #b7b7b796
@@ -44,6 +44,15 @@
 
 }
 
+.sub-button {
+    text-decoration: underline;
+    cursor: pointer;
+    padding: 10px;
+    margin-top: 15px;
+    margin-right: 10px;
+    color: #1f5f38;
+}
+
 #header-ul li {
   display:inline;
   list-style-type: none;
@@ -56,6 +65,7 @@
     padding: 10px;
     background: #fcfeff;
 }
+
 
 a {
   width: 25%;
@@ -82,4 +92,32 @@ a:hover {
 .login-wrapper {
     text-align: center;
     padding: 100px;
+}
+
+h1,h2,h3 {
+    text-align: center;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+li {
+    text-align: center;
+    font-size: 24px;
+}
+
+.trail-name {
+
+    text-align: center;
+    font-size: 24px;
+}
+
+p {
+    font-size: 24px;
+    text-align: center;
+    margin-left: 40px;
+    margin-right: 40px;
 }

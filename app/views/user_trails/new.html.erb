@@ -1,16 +1,16 @@
-<h3>Write a review of a selected trail</h3>
-<%= flash[:errors] %>
-<%= form_for @user_trail do |f| %>
-    <%= f.hidden_field :user_id, value: @logged_in_user.id %>
+<h1>Review a Trail</h1>
+<p><%= flash[:errors] %></p>
+<p><%= form_for @user_trail do |f| %>
+    <%= f.hidden_field :user_id, value: @logged_in_user.id %></p>
 
-    <%= f.label :trail %>
-    <%=f.collection_select :trail_id, @trails, :id, :name %><br><br>
+    <p><%= f.label :trail %>
+    <%=f.collection_select :trail_id, @trails, :id, :name %></p>
 
-    <%= f.label :review %>
-    <%= f.text_area :review %><br><br>
+    <p><%= f.label :review %>
+    <%= f.text_area :review %></p>
 
-    <%= f.label :rating %>
-    <%= f.select :rating, (1..10).map %><br><br>
+    <p><%= f.label :rating %>
+    <%= f.select :rating, (1..10).map %></p>
 
-    <%= f.submit "Submit Review"%>
+    <p><%= f.submit "Submit Review"%></p>
 <% end %>
