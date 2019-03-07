@@ -581,6 +581,50 @@
 
   <!-- Template Main Javascript File -->
   <script src="js/main.js"></script>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+  <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="lib/animate/animate.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <link href="img/favicon.png" rel="icon">
+  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Poppins:300,400,500,700" rel="stylesheet">
+  </head>
 
+  <body>
+    <nav>
+        <p class="app-title">BackCountryTrails</p>
+    </nav>
+    <header>
+        <% unless @logged_in %>
+        <div class="container">
+        <ul id= "header-ul">
+            <li class="nav-bar"><%= link_to "Home", root_path %></li>
+            <li class="nav-bar"><%= link_to "National Parks", national_parks_path %></li>
+            <li class="nav-bar"><%= link_to "Trails", national_parks_path %></li>
+            <li class="nav-bar"><%= link_to "Login", new_login_path %></li>
+            <li class="nav-bar"><%= link_to "Sign Up", new_user_path %></li>
+
+        </ul>
+        </div>
+        <% else %>
+        <div class="logged-in-navbar">
+          Hello, <%= @logged_in_user.username %><br>
+          <%= link_to "National Parks", national_parks_path  %>
+          <%= link_to "All Trails", trails_path  %>
+          <%= link_to "Review a Trail", new_user_trail_path  %>
+          <%= link_to "My Profile", user_path(@logged_in_user)  %>
+          <%= form_tag "/login/#{ @logged_in_user.id }", method: :delete do %>
+              <%= submit_tag "Log out" %>
+              <hr>
+          <% end %>
+        <% end %>
+        </div>
+    </header>
 </body>
 </html>
