@@ -1,14 +1,13 @@
 <% @page_title = "UserAuth | Signup" %>
 <div class="Sign_Form">
   <h1>Sign Up</h1>
-  <%= flash[:errors]  %>
-  <%= form_for(@user) do |f| %>
-    <p>First Name:<br> <%= f.text_field :first_name %></p>
-    <p>Last Name:<br> <%= f.text_field :last_name %></p>
-    <p> Username:</br> <%= f.text_field :username%> </p>
-    <p> Email:</br> <%= f.text_field :email%> </p>
-    <p> Password:</br> <%= f.password_field :password%></p>
-    <%= f.submit :Signup %>
-  <% end %>
-
-</div>
+  <%=flash[:errors] %>
+      <%= form_for(@user) do |f| %>
+        <p>First Name:<br> <%= f.text_field :first_name %></p>
+        <p>Last Name:<br> <%= f.text_field :last_name %></p>
+        <p> Username:</br> <%= f.text_field :username%> </p>
+        <p> Email:</br> <%= f.text_field :email%> </p>
+        <p> Password:</br> <%= f.password_field :password%></p>
+        <%= f.submit :Signup %>
+      <% end %>
+ </div>
