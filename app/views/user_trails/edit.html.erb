@@ -1,0 +1,19 @@
+<h1>Edit Your Review</h1>
+
+<h3><%= @user_trail.trail.name %></h3>
+<p><%= flash[:errors] %></p>
+
+<%= form_for @user_trail do |f| %>
+    <%= f.hidden_field :user_id, value: @logged_in_user.id %>
+
+    <%= f.label :trail %>
+    <%=f.collection_select :trail_id, @trails, :id, :name %><br><br>
+
+    <%= f.label :review %>
+    <%= f.text_area :review %><br><br>
+
+    <%= f.label :rating %>
+    <%= f.select :rating, (1..10).map %><br><br>
+
+    <%= f.submit "Submit Review"%>
+<% end %>

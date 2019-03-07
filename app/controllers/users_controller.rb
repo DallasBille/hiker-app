@@ -16,7 +16,7 @@ class UsersController < ApplicationController
             log_in_user(@user)
             redirect_to @user
         else
-            flash[:errors] = "You must enter all information to create account"
+            flash[:errors] = @user.errors.full_messages
             redirect_to new_user_path
         end
     end

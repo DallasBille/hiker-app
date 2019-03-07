@@ -1,7 +1,9 @@
 <% @page_title = "UserAuth | Signup" %>
 <div class="Sign_Form">
   <h1>Sign Up</h1>
-  <%= flash[:errors] %>
+  <%flash[:errors].each do |message| %>
+  <li><%= message %></li>
+  <% end %>
 
   <%= form_for(@user) do |f| %>
     <p>First Name:<br> <%= f.text_field :first_name %></p>

@@ -1,8 +1,9 @@
 <h3><%= @trail.name %></h3>
-<%= flash[:errors].to_s %>
-<%= link_to 'Add a Review', new_user_trail_path%>
 
+Average Trail Rating:
+<%= @trail.trail_rating%>
 
+<p><%= flash[:errors].to_s %></p>
 <% if @logged_in_user %>
     <%= link_to "Add a Review", new_user_trail_path %>
     <%= form_for @list do |f| %>
@@ -24,8 +25,9 @@
     <p>Review: <%= ut.review %></p>
     <% if @logged_in_user %>
         <% if @logged_in_user.id == ut.user_id %>
-            <%= form_for ut, method: :delete do |t|%>
+            <%= form_for ut, method: :delete, data: {confirm: "Are you sure?"} do |t|%>
                 <%= t.submit "Delete" %>
+                <%= link_to "Edit Your Review", edit_user_trail_path(ut) %>
             <% end %>
         <%end %>
     <% end %>

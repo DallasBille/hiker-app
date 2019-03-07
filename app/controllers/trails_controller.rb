@@ -11,6 +11,7 @@ class TrailsController < ApplicationController
 
 
 
+
     private
 
     def get_trail

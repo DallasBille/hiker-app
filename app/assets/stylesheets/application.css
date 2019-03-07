@@ -31,9 +31,9 @@
     margin: 0px;
     text-decoration: none;
     text-align: center;
-    color: blue;
+    color: #1f5f38 ;
     font-size: 45px;
-    text-shadow:
+
 }
 
 
@@ -52,7 +52,7 @@
 
 .nav-bar {
     border: 1px solid black;
-    border-radius: 5px 20px 5px;
+    border-radius: 65px 10px 65px;
     padding: 10px;
     background: #fcfeff;
 }
@@ -71,5 +71,15 @@ a:hover {
 
 .logged-in-navbar {
     text-align: right;
+    padding: 15px;
 
+}
+
+.horizontal-line {
+    color: blue;
+}
+
+.login-wrapper {
+    text-align: center;
+    padding: 100px;
 }
