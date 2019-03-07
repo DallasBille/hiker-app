@@ -1,6 +1,6 @@
 class UserTrailsController < ApplicationController
 
-
+    before_action :get_user_trail, only: [:edit, :update, :destroy]
     def new
         @trails = Trail.all
         @user_trail = UserTrail.new
@@ -24,17 +24,15 @@ class UserTrailsController < ApplicationController
     end
 
     def edit
-        @user_trail = UserTrail.find(params[:id])
+
     end
 
     def update
-        @user_trail = UserTrail.find(params[:id])
         @user_trail.update(ut_params)
         redirect_to trail_path(@user_trail.trail_id)
     end
 
     def destroy
-        @user_trail = UserTrail.find(params[:id])
         @user_trail.destroy
         redirect_to trail_path(@user_trail.trail_id)
     end
@@ -42,6 +40,9 @@ class UserTrailsController < ApplicationController
 
     private
 
+    def get_user_trail
+        @user_trail = UserTrail.find(params[:id])
+    end
     def ut_params
         params.require(:user_trail).permit(:user_id, :trail_id, :rating, :review)
     end

@@ -4,7 +4,8 @@ class User < ApplicationRecord
     has_many :lists
     has_many :trail_lists, through: :lists, source: :trail
 
-    validates :username, { presence: true, uniqueness: true }
+    validates :username, { presence: true, uniqueness: true , message:}
+    validates :email, format: {with: URI::MailTo::EMAIL_REGEXP, message: "You must enter a valid email"}
     has_secure_password
 
     def full_name

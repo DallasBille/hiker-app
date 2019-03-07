@@ -1,13 +1,13 @@
 class UsersController < ApplicationController
     before_action :get_user, only: [:show, :edit, :update, :destroy]
 
+    def new
+        @user = User.new
+    end
+
     def show
         @user_trail = UserTrail.all
 
-    end
-
-    def new
-        @user = User.new
     end
 
     def create
@@ -16,15 +16,9 @@ class UsersController < ApplicationController
             log_in_user(@user)
             redirect_to @user
         else
-            flash[:errors] = "You must enter all information to create account"
+            flash[:errors] = @user_trail.errors.full_messages
             redirect_to new_user_path
         end
-
-
-    end
-
-    def destroy
-
     end
 
     private
