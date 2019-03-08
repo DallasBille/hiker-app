@@ -1,14 +1,14 @@
-<div>
 
-  </div>
-    <h1 text-align: center ><%= @national_park.name %> National Park</h1>
+<h1 text-align:="text-align:" center="center"><%= @national_park.name %>
+    National Park</h1>
 
-    <h2>State: <%= @national_park.state %></h2>
+<h2>State:
+    <%= @national_park.state %></h2>
 
-        <% @national_park.trails.each do |trail| %>
-            <h3>Trails: <%= link_to trail.name, trail %></h3>
-        <% end %>
-   </div>
+<% @national_park.trails.each do |trail| %>
+    <h3>Trails:
+        <%= link_to trail.name, trail %></h3>
+<% end %>
 
-        <img src="<%= @national_park.img_url %>">
-</div>
+
+<img src="<%= @national_park.img_url %>">

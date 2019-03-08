@@ -12,7 +12,8 @@
  *
  *= require_tree .
  *= require_self
- */
+ *= require bootstrap/dist/css/bootstrap
+
 
  body {
      font-family: 'Garamond';
@@ -21,12 +22,25 @@
       #b7b7b796
     );
     /* background: url(https://thumbnails-visually.netdna-ssl.com/mountain-hiking-accesories_511ccc2aa37ec_w1500.jpg); */
-    z-index: -2px;
+/* z-index: -2px;
     background-size: cover;
- }
+ } */
+* {
+    font-family: 'Arial';
+}
 
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+}
 
-.app-title {
+h1 {
+    padding-top: 38px;
+}
+
+/* .app-title {
     padding: 0px;
     margin: 0px;
     text-decoration: none;
@@ -120,4 +134,4 @@ p {
     text-align: center;
     margin-left: 40px;
     margin-right: 40px;
-}
+} */

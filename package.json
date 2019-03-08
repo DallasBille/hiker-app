@@ -1,5 +1,12 @@
 {
   "name": "hiker-app",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "bootstrap": "^4.3.1"
+  },
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:DallasBille/hiker-app.git",
+  "author": "<github username> <<github email address>>",
+  "license": "MIT"
 }
