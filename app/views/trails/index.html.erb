@@ -3,7 +3,7 @@
 
 <h1>Trails!</h1>
 <%= link_to "Add a Review", new_user_trail_path, style: "font-size: 24px; text-padding" %>
-
+<hr style="border: 2px solid grey ">
 <% @trails.each do |trail| %>
 
     <p><%= link_to trail.name, trail_path(trail) %></p>

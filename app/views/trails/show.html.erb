@@ -19,7 +19,7 @@
 <p>State: <%= @trail.national_park.state %></p>
 
 <% @trail.user_trails.each do |ut| %>
-    <hr>
+    <hr style="border: 2px solid grey ">
     <p>Hiker: <%= ut.user.full_name %></p>
     <p>Rating: <%= ut.rating %></p>
     <p>Review: <%= ut.review %></p>
