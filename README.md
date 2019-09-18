@@ -8,6 +8,7 @@ BackCountry Trails is an application for user to review trails. Users can also s
 ## Motivation:
 
 An app built by two outdoors enthusiasts, for outdoors enthusiasts. Get outdoors, go see what nature has to offer.
+Built by Dallas Bille and Andy Reyes.
 
 ### Technologies:
 
