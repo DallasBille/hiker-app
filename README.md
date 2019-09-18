@@ -19,7 +19,8 @@ BackCountry Trails uses Rails, Bcrypt, bootstrap and the MVC architectural patte
 2. Bundle Install.
 3. rails db:migrate
 4. rails db:seed
-5. create an account, and produce some content.
+5. rails start
+6. create an account, and produce some content.
 
 ### To-Dos:
 
