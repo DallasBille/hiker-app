@@ -6,12 +6,12 @@ class Trail < ApplicationRecord
     belongs_to :national_park
 
     def trail_rating
-       if  self.user_trails.any?
-           rating_array = self.user_trails.map{|ut| ut.rating}
-           average = rating_array.inject{ |sum, el| sum + el }.to_f / rating_array.size
-           return "#{average.round(1)}/10"
-       else
-           return "This trail has no reviews"
-       end
+        if  user_trails.any?
+            rating_array = user_trails.map(&:rating)
+            average = rating_array.inject { |sum, el| sum + el }.to_f / rating_array.size
+            "#{average.round(1)}/10"
+        else
+            'This trail has no reviews'
+        end
    end
 end

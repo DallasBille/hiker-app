@@ -3,14 +3,14 @@
 <p><%= form_for @user_trail do |f| %>
     <%= f.hidden_field :user_id, value: @logged_in_user.id %></p>
 
-    <p><%= f.label :trail %>
+<p><%= f.label :trail %>
     <%=f.collection_select :trail_id, @trails, :id, :name %></p>
 
-    <p><%= f.label :review %>
+<p><%= f.label :review %>
     <%= f.text_area :review %></p>
 
-    <p><%= f.label :rating %>
+<p><%= f.label :rating %>
     <%= f.select :rating, (1..10).map %></p>
 
-    <p><%= f.submit "Submit Review"%></p>
+<p><%= f.submit "Submit Review"%></p>
 <% end %>

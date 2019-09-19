@@ -1,24 +1,29 @@
-# README
+## About the Project:
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+BackCountry Trails is an application for user to review trails. Users can also save trails that they would like to hike onto their profile, and remove them when they have been completed.
 
-Things you may want to cover:
+![Imgur](https://i.imgur.com/FTQBxlJ.png)
+![Imgur](https://i.imgur.com/IctkWwq.png)
 
-* Ruby version
+## Motivation:
 
-* System dependencies
+An app built by two outdoors enthusiasts, for outdoors enthusiasts. Get outdoors, go see what nature has to offer.
+Built by Dallas Bille and Andy Reyes.
 
-* Configuration
+### Technologies:
 
-* Database creation
+BackCountry Trails uses Rails, Bcrypt, bootstrap and the MVC architectural pattern to bring forth web content.
 
-* Database initialization
+### Set Up:
 
-* How to run the test suite
+1. Clone Repo
+2. Bundle Install.
+3. rails db:migrate
+4. rails db:seed
+5. rails start
+6. create an account, and produce some content.
 
-* Services (job queues, cache servers, search engines, etc.)
+### To-Dos:
 
-* Deployment instructions
-
-* ...
+1. Use API's to have real trail and national park content.
+2. Restructure App layout.
